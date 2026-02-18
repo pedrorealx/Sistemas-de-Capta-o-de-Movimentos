@@ -19,6 +19,12 @@ public class pessoaController {
         return service.salvar(pessoa);
     }
 
+    @PutMapping("/{id}")
+    public pessoa atualizar(@PathVariable(value = "id") Long id,
+            @RequestBody pessoa pessoa) {
+        return service.atualizar(id, pessoa);
+    }
+
     @GetMapping
     public List<pessoa> listar() {
         return service.listar();
